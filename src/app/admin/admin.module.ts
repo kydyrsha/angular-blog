@@ -34,3 +34,4 @@ import {EditPageComponent} from './edit-page/edit-page.component';
 export class AdminModule {
 
 }
+

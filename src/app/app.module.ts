@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { MainLayoutComponent } from './shared/components/main-layout/main-layout.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { PostPageComponent } from './post-page/post-page.component';
-import { AdminLayoutComponent } from './admin/shared/components/admin-layout/admin-layout.component';
+import { PostComponent } from './shared/components/post/post.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +14,7 @@ import { AdminLayoutComponent } from './admin/shared/components/admin-layout/adm
     MainLayoutComponent,
     HomePageComponent,
     PostPageComponent,
-    AdminLayoutComponent
+    PostComponent
   ],
   imports: [
     BrowserModule,
