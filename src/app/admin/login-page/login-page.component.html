@@ -1,1 +1,48 @@
-<p>login-page works!</p>
+<form class="card" [formGroup]="form" (ngSubmit)="submit()">
+  <h2>Hi there!</h2>
+
+  <div
+    class="form-control"
+    [ngClass]="form.get('email').touched && form.get('email').invalid"
+  >
+    <label for="email">Email</label>
+    <input type="email" id="email" formControlName="email">
+    <div
+      *ngIf="form.get('email').touched && form.get('email').invalid"
+      class="validation"
+    >
+      <small *ngIf="form.get('email').errors.required">
+        Could you please write your email?
+      </small>
+      <small *ngIf="form.get('email').errors.email">
+        Email field should be filled
+      </small>
+    </div>
+  </div>
+
+  <div
+    class="form-control"
+    [ngClass]="form.get('password').touched && form.get('password').invalid"
+  >
+    <label for="password">Password</label>
+    <input type="password" id="password" formControlName="password">
+    <div
+      class="validation"
+      *ngIf="form.get('password').touched && form.get('password').invalid"
+    >
+      <small *ngIf="form.get('password').errors.required">
+        Could you please write your password?
+      </small>
+      <small *ngIf="form.get('password').errors.minlength">
+        Minimun length: {{form.get('password').errors.minlength.requiredLength}}
+        Now it is: {{form.get('password').errors.minlength.actualLength}}
+      </small>
+    </div>
+  </div>
+
+  <button
+    type="submit"
+    class="btn btn-primary"
+    [disabled]="form.invalid"
+  >Enter</button>
+</form>
