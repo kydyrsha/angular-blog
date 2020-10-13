@@ -4,7 +4,7 @@ import {Subject} from 'rxjs';
 export type AlertType = 'success' | 'warning' | 'danger'
 
 export interface Alert {
-  type: string
+  type: AlertType
   text: string
 }
 
@@ -16,11 +16,11 @@ export class AlertService {
     this.alert$.next({type:'success', text})
   }
 
-  warning() {
+  warning(text: string) {
     this.alert$.next({type:'warning', text})
   }
 
-  danger() {
+  danger(text: string) {
     this.alert$.next({type:'danger', text})
   }
 
